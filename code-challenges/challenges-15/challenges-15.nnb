@@ -1,0 +1,67 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## Hacker Rank\n\nFor Thursdays you will be solving some selected challenges on HackerRank, please create an account if you don't have then\nFollow the links below:\nread them carefully and solve them then copy-paste your solution below in Code Block"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Required**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Equality In An Array](https://www.hackerrank.com/challenges/equality-in-a-array/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function equalizeArray(arr) {\n    // Write your code here\n    let mostRepetition;\n    let numberOfRequiredDeletions = 0;\n    let sameNumberOfRepetitions = 0;\n    let numbersRepetitionTemplate = {};\n    let numbersRepetitionArr = [];\n\n    // Making the template::::\n    arr.map(item => numbersRepetitionTemplate[`id${item}`] = item);\n    for (let key in numbersRepetitionTemplate) {\n        numbersRepetitionArr.push({ id: numbersRepetitionTemplate[key], repetition: 0 });\n    }\n    //Filling data::::\n    arr.map(item => numbersRepetitionArr.map(element => element.id === item ? element.repetition++ : element.repetition));\n\n    //Finding the most repetition::::\n    mostRepetition = numbersRepetitionArr[0].repetition;\n\n    numbersRepetitionArr.map(item => mostRepetition < item.repetition ? mostRepetition = item.repetition : mostRepetition);\n\n    //Finising the number of required deletions and the numbers that have the same amount of repetitions::::\n    numbersRepetitionArr.map(item => {\n        if (item.repetition === mostRepetition) {\n            sameNumberOfRepetitions++;\n        }\n        else {\n            numberOfRequiredDeletions += item.repetition;\n        }\n    });\n\n    // numbersRepetitionArr.map(item => );\n\n    //The returning conditions::::\n    if(sameNumberOfRepetitions === arr.length) return 0;\n    // if(sameNumberOfRepetitions === 1 && numberOfRequiredDeletions === 0) return arr.length - 1;\n    if(sameNumberOfRepetitions > 1) return arr.length - mostRepetition;\n    if (sameNumberOfRepetitions === 1) return numberOfRequiredDeletions\n}\n//This code failed 1/18 test cases from the test cases givin by the Hacker Rank website, meaning it still needs work. I'll work on it later."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Optional**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Halloween Sale](https://www.hackerrank.com/challenges/halloween-sale/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Sherlock And Squares](https://www.hackerrank.com/challenges/sherlock-and-squares/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}
